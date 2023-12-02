@@ -1,0 +1,9 @@
+#+TITLE: Teorias Probabilidad y Estadística 
+
+* Introducción Toma Decisiones
+* La Estadística Descriptiva
+* Probabilidad
+* Variables Aleatorias y Distribuciones
+* Variables Aleatorias Continuas
+* Variables Aleatorias de Dim >= 2
+* Proceso de Poisson, Bernulli y Cadena de Markov
