@@ -1,9 +1,41 @@
 #+TITLE: Teorias Probabilidad y Estadística 
 
 * Introducción Toma Decisiones
+  ** Introducción
+  #+BEGIN_VERSE 
+  La Estadistica y el Metodo Cientifico nos proveen un conjuto de
+  principios y procedimientos para obtener y resumir la informacion
+  para la *Toma de Decisiones*.
+
+  El metodo Cientifico comprende los siguientes pasos:
+  #+END_VERSE
+    - Formular Teorias
+    - Recoleccion de datos
+    - Resumen y Analisis de Datos
+    - Interpretacion de los resultados
+  ** Decisiones
+  - Simples :: Puedo cruzar la calle en esta interseccion?
+  - Complejas
+  #+BEGIN_VERSE 
+  Supongamos que quiero comprar un nuevo
+  auto 0KM y decido hacerlo con la General Motors. La respuesta
+  a las siguientes preguntas puede influir sobre la decision:
+  Distintos modelos producidos en el corriente ano, que modelo es
+  mas eficiente en cuanto a Km recorridos por litro de combustible,
+  en precio ? 
+  #+END_VERSE
+  ** Lenguaje de la estadistica en la toma de Decisiones
+    Esta nueva terminología involucra frases, símbolos y definiciones especiales. El
+    significado de una palabra es el lenguaje corriente puede ser diferente de cómo esa
+    palabra está definida en el contexto de la Estadística. En esta Sección discutiremos la
+    terminología estadística en el contexto del proceso de tomar decisiones. Hay muchas
+    componentes en este proceso; incluye teorías, datos, una medida de “likeliness” y la
+    posibilidad de errores.
+    *** El ensayo de las Teorias
+
 * La Estadística Descriptiva
-* Probabilidad
-* Variables Aleatorias y Distribuciones
-* Variables Aleatorias Continuas
-* Variables Aleatorias de Dim >= 2
-* Proceso de Poisson, Bernulli y Cadena de Markov
+* TODO Probabilidad
+* TODO Variables Aleatorias y Distribuciones
+* TODO Variables Aleatorias Continuas
+* TODO Variables Aleatorias de Dim >= 2
+* TODO Proceso de Poisson, Bernulli y Cadena de Markov
