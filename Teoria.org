@@ -76,7 +76,6 @@ porcentaje es la proporción multiplicado por 100.
 _Gráfico de torta:_  Consiste en un círculo con sectores, donde cada sector es una categoria.
 El tamaño del sector es proporcional a su frecuencia relativa. Se utilizan cuando hay pocas 
 categorías.
-#
 #+BEGIN_SRC R :exports results :file img/grafico-torta.png
 library(ggplot2)
 
