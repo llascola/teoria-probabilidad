@@ -12,8 +12,10 @@ El metodo Cientifico comprende los siguientes pasos:
 - Resumen y Analisis de Datos
 - Interpretacion de los resultados
 ** Decisiones
-- Simples :: Puedo cruzar la calle en esta interseccion?
-- Complejas :: Supongamos que quiero comprar un nuevo  
+- Simples 
+Puedo cruzar la calle en esta interseccion?
+- Complejas
+Supongamos que quiero comprar un nuevo  
 auto 0KM y decido hacerlo con la General Motors. La respuesta  
 a las siguientes preguntas puede influir sobre la decision:  
 Distintos modelos producidos en el corriente ano, que modelo es  
