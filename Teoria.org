@@ -2,8 +2,8 @@
 
 * Introducción Toma Decisiones
 ** Introducción
-La Estadistica y el Metodo Cientifico nos proveen un conjuto de
-principios y procedimientos para obtener y resumir la informacion
+La Estadistica y el Metodo Cientifico nos proveen un conjuto de  
+principios y procedimientos para obtener y resumir la informacion  
 para la *Toma de Decisiones*.
 
 El metodo Cientifico comprende los siguientes pasos:
@@ -13,20 +13,19 @@ El metodo Cientifico comprende los siguientes pasos:
 - Interpretacion de los resultados
 ** Decisiones
 - Simples :: Puedo cruzar la calle en esta interseccion?
-- Complejas
-Supongamos que quiero comprar un nuevo
-auto 0KM y decido hacerlo con la General Motors. La respuesta
-a las siguientes preguntas puede influir sobre la decision:
-Distintos modelos producidos en el corriente ano, que modelo es
-mas eficiente en cuanto a Km recorridos por litro de combustible,
+- Complejas :: Supongamos que quiero comprar un nuevo  
+auto 0KM y decido hacerlo con la General Motors. La respuesta  
+a las siguientes preguntas puede influir sobre la decision:  
+Distintos modelos producidos en el corriente ano, que modelo es  
+mas eficiente en cuanto a Km recorridos por litro de combustible,  
 en precio ? 
 ** Lenguaje de la estadistica en la toma de Decisiones
-Esta nueva terminología involucra frases, símbolos y definiciones especiales. El
-significado de una palabra es el lenguaje corriente puede ser diferente de cómo esa
-palabra está definida en el contexto de la Estadística. En esta Sección discutiremos la
-terminología estadística en el contexto del proceso de tomar decisiones. Hay muchas
-componentes en este proceso; incluye teorías, datos, una medida de “likeliness” y la
-posibilidad de errores.
+Esta nueva terminología involucra frases, símbolos y definiciones especiales. El  
+significado de una palabra es el lenguaje corriente puede ser diferente de cómo esa  
+palabra está definida en el contexto de la Estadística. En esta Sección discutiremos la  
+terminología estadística en el contexto del proceso de tomar decisiones. Hay muchas  
+componentes en este proceso; incluye teorías, datos, una medida de “likeliness” y la  
+posibilidad de errores.  
 *** El ensayo de las Teorias
 * La Estadística Descriptiva
 * TODO Probabilidad
