@@ -7,20 +7,18 @@ principios y procedimientos para obtener y resumir la informacion
 para la *Toma de Decisiones*.
 
 El metodo Cientifico comprende los siguientes pasos:
-- Formular Teorias
-- Recoleccion de datos
-- Resumen y Analisis de Datos
-- Interpretacion de los resultados
+- *Formular Teorias*
+- *Recoleccion de datos*
+- *Resumen y Analisis de Datos*
+- *Interpretacion de los resultados*
 ** Decisiones
-- Simples 
-Puedo cruzar la calle en esta interseccion?
-- Complejas
-Supongamos que quiero comprar un nuevo  
-auto 0KM y decido hacerlo con la General Motors. La respuesta  
-a las siguientes preguntas puede influir sobre la decision:  
-Distintos modelos producidos en el corriente ano, que modelo es  
-mas eficiente en cuanto a Km recorridos por litro de combustible,  
-en precio ? 
+- _Simples:_ :: Puedo cruzar la calle en esta interseccion?
+- _Complejas:_ :: Supongamos que quiero comprar un nuevo
+  auto 0KM y decido hacerlo con la General Motors. La respuesta
+  a las siguientes preguntas puede influir sobre la decision:
+  Distintos modelos producidos en el corriente ano, que modelo es
+  mas eficiente en cuanto a Km recorridos por litro de combustible,
+  en precio ?
 ** Lenguaje de la estadistica en la toma de Decisiones
 Esta nueva terminología involucra frases, símbolos y definiciones especiales. El  
 significado de una palabra es el lenguaje corriente puede ser diferente de cómo esa  
@@ -33,9 +31,9 @@ posibilidad de errores.
 La *Estadistica* es la ciencia de recolectar, analizar y 
 sacar conclusiones a partir de un conjunto de datos.
 En este proceso se pueden diferenciar dos partes:
-- _Estadistica descriptiva:_ Organizar y resumir la información
-en tablas, gráficos y medidas resumen.
-- _Estadística inferencial:_ Sacar conclusiones o tomar decisiones.
+- _Estadistica descriptiva:_ :: Organizar y resumir la información
+  en tablas, gráficos y medidas resumen.
+- _Estadística inferencial:_ :: Sacar conclusiones o tomar decisiones.
 
 Le llamaremos *población* al conjunto de objetos acerca del cual 
 se desea obtener información. Y *muestra* es un subconjunto de la
@@ -50,22 +48,24 @@ Las medidas resumen que se obtienen de una población se denominan
 *parámetro* y los que se obtienen a partir de una muestra se llama *estadistica*.
 
 ** Tipos de variables
-_Categórica:_  Cada observación pertenece a un conjunto de categorías. La característica fundamental 
-a describir es el número relativo de observaciones en las distintas categorías.
-_Cuatitativa:_ Cada observación toma valores numéricos que representan diferentes magnitudes.
-Con este tipo de variables se calculan las medidas resumen con excepción de las que no representan 
-una cantidad o magnitud, ejemplo: código de área. Las característica a describir son el centro
-y la variabilidad o dispersión de los datos.
-Estas se dividen en 
-_Discretas:_ Cada valor que toma pertenece a un conjunto discreto, como los número enteros.
-_Continua:_ Cada valor que toma pertenece a un conjunto continuo, como un intervalo.
+- _Categórica:_ :: Cada observación pertenece a un conjunto de categorías. La característica fundamental
+  a describir es el número relativo de observaciones en las distintas categorías.
+- _Cuatitativa:_ :: Cada observación toma valores numéricos que representan diferentes magnitudes.
+  Con este tipo de variables se calculan las medidas resumen con excepción de las que no representan
+  una cantidad o magnitud, ejemplo: código de área. Las característica a describir son el centro
+  y la variabilidad o dispersión de los datos.
+  Estas se dividen en
+- _Discretas:_ :: Cada valor que toma pertenece a un conjunto discreto, como los número enteros.
+- _Continua:_ :: Cada valor que toma pertenece a un conjunto continuo, como un intervalo.
 
 
 ** Analisis decriptivo para variables categóricas
-_Tablas de frecuencias:_ Como cada observación cae en una categoría, 
-podemos usar proporciones o porcentajes (frecuencias relativas) para resumir el número de observaciones.
-La proporcion es la cantidad de observaciones de esa categoria sobre el total de las observaciones. El
-porcentaje es la proporción multiplicado por 100.
+- _Tablas de frecuencias:_ ::
+
+  Como cada observación cae en una categoría,
+  podemos usar proporciones o porcentajes (frecuencias relativas) para resumir el número de observaciones.
+  La proporcion es la cantidad de observaciones de esa categoria sobre el total de las observaciones. El
+  porcentaje es la proporción multiplicado por 100.
 
 | Categoría | Frecuencia | Frecuencia Relativa | Frecuencia Relativa Porcentual|
 |-----------|------------|---------------------|-------------------------------|
@@ -73,10 +73,10 @@ porcentaje es la proporción multiplicado por 100.
 | No        | 49         | 0.49                | 49%                           |
 | Total     | 100        | 1.00                | 100%                          |
 
-_Gráfico de torta:_  Consiste en un círculo con sectores, donde cada sector es una categoria.
-El tamaño del sector es proporcional a su frecuencia relativa. Se utilizan cuando hay pocas 
-categorías.
-#+BEGIN_SRC R :exports results :file img/grafico-torta.png
+- _Gráfico de torta:_ :: Consiste en un círculo con sectores, donde cada sector es una categoria.
+  El tamaño del sector es proporcional a su frecuencia relativa. Se utilizan cuando hay pocas
+  categorías.
+#+BEGIN_SRC R :eval no
 library(ggplot2)
 
 # Datos
