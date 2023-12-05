@@ -92,7 +92,7 @@ los valores que toma la variable en estudio y en el eje vertical, la frecuencia 
 su valor en una escala horizontal. Cuando un valor se presenta en mas de una ocación, se coloca por
 encima del anterior punto, esto nos da la frecuencia del valor. Se utiliza cuando el conjunto de datos 
 es pequeño ya que se muestran todas las observaciones.
-- _Gráfico de tallo y hoja:_::  El gráfico se divide en dos partes, el tallo es la primera parte de número
+- _Gráfico de tallo y hoja:_ ::  El gráfico se divide en dos partes, el tallo es la primera parte de número
 y es el primer dígito o digitos. La hoja es la última parte del npumero y son los digitos finales. Con estos 
 datos se puede obtener graficar de una manera sencilla la forma, dispersión y datos extremos o "outliers",
 estos últimos son valores muy alejados del resto. Con los gráficos de puntos y de tallo y hoja es fácil 
