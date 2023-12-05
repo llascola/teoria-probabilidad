@@ -220,7 +220,14 @@ La forma del histograma nos muestra la tendencia de la variable, esta puede ser:
     del total y Q3 separa el 25% superior del resto. El rango intercuartil es Q3 - Q1. El gráfico que 
     muestra estos datos es el boxplot. 
  
-* TODO Probabilidad
+* Probabilidad
+** Experimentos aleatorios
+Cuando hacemos un experimento en el cual el resultado es incierto y hay varios resultados posibles, 
+nos interesa saber el grado de certeza de cada uno de los posibles resultados. Esto es lo que estudia 
+la *Probabilidad*. Cabe mencionar que en un experimento entran en juego muchos factores pero nosotros 
+nos centraremos en dos, las condiciones esenciales del mismo y la cantidad de repeticiones.
+En cualquier experimento nos interesa saber, el procedimiento que se realizo y lo que estamos interesados
+en observar. A continuacion
 * TODO Variables Aleatorias y Distribuciones
 * TODO Variables Aleatorias Continuas
 * TODO Variables Aleatorias de Dim >= 2
