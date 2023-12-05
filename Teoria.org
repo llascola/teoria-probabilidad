@@ -76,23 +76,63 @@ Las medidas resumen que se obtienen de una población se denominan
 - _Gráfico de torta:_ :: Consiste en un círculo con sectores, donde cada sector es una categoria.
   El tamaño del sector es proporcional a su frecuencia relativa. Se utilizan cuando hay pocas
   categorías.
-#+BEGIN_SRC R :eval no
-library(ggplot2)
 
-# Datos
-datos <- data.frame(
-Categoria = c("Si", "No"),
-Frecuencia = c(51, 49)
-)
+- _Gráfico de barras:_ :: Consiste en barras, donde cada barra es una categoría. Las barras deben
+tener todas el mismo ancho y la altura depende de la frecuencia o frecuencia relativa de la Categoria.
+Se suelen utilizar para comparar las categorías.
+- _Gráfico de Pareto:_ :: Consiste en un gráfico de barras ordenadas por su frecuencia de forma 
+descendente. Este diagrama ayuda a mostrar el principio de Pareto, "un pequeño numero de categorías 
+contiene a la mayoría de las observaciones".
 
-# Crear el gráfico de torta
-ggplot(datos, aes(x = "", y = Frecuencia, fill = Categoria)) +
-geom_bar(stat = "identity", width = 1, color = "white") +
-coord_polar("y", start = 0) +
-theme_void() +
-theme(legend.position="bottom") +
-labs(title = "Gráfico de Torta", fill = "Categoría", y = NULL)
-#+END_SRC
+** Análisis descriptivo para variables cualitativas
+- _Gráfico de bastones:_ :: Consta de bastones (barras sin ancho), los cuales se utilizan para representar
+datos numéricos discritos, los cuales se originan en base a un conteo. En el eje horizontal, se colocan
+los valores que toma la variable en estudio y en el eje vertical, la frecuencia de los valores.
+- _Gráfico de puntos:_ :: Cada observación se representa por un punto sobre la ubicación correspondiente a 
+su valor en una escala horizontal. Cuando un valor se presenta en mas de una ocación, se coloca por
+encima del anterior punto, esto nos da la frecuencia del valor. Se utiliza cuando el conjunto de datos 
+es pequeño ya que se muestran todas las observaciones.
+- _Gráfico de tallo y hoja:_::  El gráfico se divide en dos partes, el tallo es la primera parte de número
+y es el primer dígito o digitos. La hoja es la última parte del npumero y son los digitos finales. Con estos 
+datos se puede obtener graficar de una manera sencilla la forma, dispersión y datos extremos o "outliers",
+estos últimos son valores muy alejados del resto. Con los gráficos de puntos y de tallo y hoja es fácil 
+reconstruir los datos originales cuando se trata de un conjunto pequeño. 
+- _Histogramas:_ :: Consta de barras para mostrar las frecuencias o frecuencias relativas de las variables.
+Una variable continua asume muchos valores distintos, lo que hace necesario dividir el rango de valores en
+intervalos mas pequeños. La cantidad de intervalos se calcula como (la raiz de n) = m y la amplitud 
+como (max-min)/m. 
+También se pueden utlizar intervalos de distinta amplitud cuando hay datos que tienen
+frecuencias muy extremas (bajas o altas). Para este caso, se utiliza la densidad en el eje vertical 
+se cacula como frecuencia relativa sobre ancho de ese valor.
+La forma del histograma nos muestra la tendencia de la variable, esta puede ser:
+  - _Simetrico:_ :: Si tanto, lado izquierdo como derecho mantienen una simetría respecto al centro.
+  - _Asimetricos:_ :: Si la cola superior del histograma se prolonga más que la cola inferior.
+    - _Asimetría a la derecha o positiva_ :: Si la cola derecha posee menor frecuencia que la izquierda.
+    - _Asimetría a la izquierda o negativa_ :: Si la cola izquierda posee menor frecuencia que la derecha.
+
+** Medidas descriptivas para variables categóricas
+- Frecuencias relativas
+- Moda
+
+** Medidas descriptivas para variables cuantitativas
+- _Medidas de posición central:_ :: Se busca describir el centro o compararlo con el resto de los datos
+en relación al promedio y la mediana. El promedio tiene el problema de poder estar muy influido
+por las observaciones extremas, a diferencia de la mediana. El promedio toma en cuenta los valores y 
+la mediana solamente la cantidad de observaciones.
+- _Medidas de variabilidad:_ :: Son medidas que describen el grado en el cual las observaciones se
+alejan del promedio.
+  - Rango = max - min.
+  - Desviaciones respecto de la media: Muestra que tan alejado está un dato de la media. Se obtiene 
+    restándole a la media cada observación.
+  - Variancia muestral: Es la suma de las desviaciones de la media al cuadrado dividido por (n-1).
+  - Desvío estándar muestral: Es la raiz cuadrada positiva de la variancia muestral.
+  - Rango intercuartil: Es una medida de variabilidad resistente a los efectos de los outliers. Existen
+    tres cuartiles, Q1 separa el 25% inferior del conjunto total, Q2 es la mediana que separa el 50% 
+    del total y Q3 separa el 25% superior del resto. El rango intercuartil es Q3 - Q1. El gráfico que 
+    muestra estos datos es el boxplot. 
+ 
+
+
 * TODO Probabilidad
 * TODO Variables Aleatorias y Distribuciones
 * TODO Variables Aleatorias Continuas
