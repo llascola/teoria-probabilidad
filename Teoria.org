@@ -17,9 +17,9 @@ teorias, se recoleccionan datos, estos se analizan y se interpretan,
 generando nuevo conocimiento y nuevas teorías sobre estos.
 ** Decisiones
 - _Simples:_ :: Puedo cruzar la calle en esta interseccion?
-- _Complejas:_ :: Supongamos que quiero comprar un nuevo
+- _Complejas:_ :: Supon            gamos que quiero comprar un nuevo
   auto 0KM y decido hacerlo con la General Motors. La respuesta
-  a las siguientes preguntas puede influir sobre la decision:
+  a las si                         guientes preguntas puede influir sobre la decision:
   Distintos modelos producidos en el corriente año, que modelo es
   más eficiente en cuanto a Km recorridos por litro de combustible,
   en precio ?
@@ -31,6 +31,41 @@ terminología estadística en el contexto del proceso de tomar decisiones. Hay m
 componentes en este proceso; incluye teorías, datos, una medida de “likeliness” y la  
 posibilidad de errores.  
 *** El ensayo de las Teorias
+Competencia de teorías que sobre una población que deseamos investigar. Estas
+teorías se denominan *Hipótesis Estadísticas*. Tenemos 2 tipos
++ *H_0 -> Hipótesis nula* ::
+  Afirmación de que nada está sucediendo, no existe diferencia, no hay cambios
+  en la población. Es la creencia convencional, el status quo.
++ *H_1 -> Hipótesis alternativa* ::
+  Afirmación que el investifador espera que sea cierta. El cambio en la
+  población que el investigador está buscando. Es la competencia a esa creencia.
+*** Que teoría sustentar?
+Si los datos son poco probables de ocurrir cuando la primer teoría es cierta
+*rechazo* esta teoría y sustentamos la otra. Esto  no implica que la teoría
+que sustentamos sea la cierta. La lógica detrás de la toma de decisión esta basada
+en el concepto de *suceso raro*. Dado que la H_0 es en general, el status quo,
+comenzamos *suponiendo que la H_0 es cierta*.
+
+En general, la H_1 es el objetivo del investigador, puesto que la H_0 está tomada
+como cierta. Cuando rechazamos H_0 en favor de H_1, se dice que los datos conducen
+a un test o ensayo *Estadisticamente significativo*, es decir, los datos son poco
+probables de ser observados bajo el supuesto de que H_0 es cierta.
+*** Que errores podemos cometer ?
++ *Error tipo I* :: Error que se comete cuando se rechaza H_0 siendo cierta .(e_I)
++ *Error tipo II* :: Error que se comete cuando no se rechaza H_0 y es cierta la
+  H_1. (e_II)
+
+Tabla de consecuencias.
+
+|               | H_0 es verdadera | H_1 es verdadera |
+|---------------+------------------+------------------|
+| Sustentar H_0 | No hay error     | e_II             |
+| Sustentar H_1 | e_I              | No hay error     |
+
++ P(e_I): :: Probabilidad de rechazar H_0 siendo ella cierta.
++ P(e_II): :: Probabilidad de no rechazar H_0, cuando en realidad es cierta H_1
+
+
 * La Estadística Descriptiva
 La *Estadistica* es la ciencia de recolectar, analizar y 
 sacar conclusiones a partir de un conjunto de datos.
@@ -120,9 +155,9 @@ La forma del histograma nos muestra la tendencia de la variable, esta puede ser:
 
 ** Medidas descriptivas para variables cuantitativas
 - _Medidas de posición central:_ :: Se busca describir el centro o compararlo con el resto de los datos
-en relación al promedio y la mediana. El promedio tiene el problema de poder estar muy influido
-por las observaciones extremas, a diferencia de la mediana. El promedio toma en cuenta los valores y 
-la mediana solamente la cantidad de observaciones.
+  en relación al promedio y la mediana. El promedio tiene el problema de poder estar muy influido
+  por las observaciones extremas, a diferencia de la mediana. El promedio toma en cuenta los valores y
+  la mediana solamente la cantidad de observaciones.
 - _Medidas de variabilidad:_ :: Son medidas que describen el grado en el cual las observaciones se
   alejan del promedio.
   - Rango = max - min.
