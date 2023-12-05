@@ -65,6 +65,56 @@ Tabla de consecuencias.
 + P(e_I): :: Probabilidad de rechazar H_0 siendo ella cierta.
 + P(e_II): :: Probabilidad de no rechazar H_0, cuando en realidad es cierta H_1
 
+e_I es considerado muy serio, pero para lograr un valor 0 en la chance de cometer e_I,
+nunca rechazaríamos la H_0. Por lo que siempre tiene que estar la chance de que se cometa
+un error. Si bien queremos que P(e_I) y P(e_II) sean mínimas, cuando el número de
+observaciones *está dado* no podemos controlar ambas probabilidades.
+
+Llamamos *Nivel de significación* a un número 0 < \alpha < 1 e imponemos la condición
+P(rechazar H_0 / H_0 es cierta) <= \alpha, con el objetivo de minimizar
+P(no rechazar H_0/H_1 es cierta) con lo cual se maximiza la potencia del test.
+
+Algunos valores utilizados por investigadores son de \alpha = 0.01; 0.05; 0.1
+
+Ahora, algunas definiciones.
++ *Región Crítica/de rechazo* ::
+  Conjunto de valores para los cuales rechazaríamos H_0.
++ *Región de aceptación* ::
+  Conunto de valores para los cuales no rechazaríamos la H_0.
++ *Valor crítico* ::
+  Aquel que marca el "punto inicial" del conjutno de valores que comprende
+  la región de rechazo.
++ *Potencia del test* :: 1 - \betha.
+
+Una *regla de decisión* es una condición matemática con la cual se acepta o no una
+hipótesis dada.
+
+Dada una regal de decisión, podemos hallar los niveles de \alpha y \betha exactamente.
+También podemos ir al revés, fijar el nivel de sifnificación \alpha y a partir de él,
+determinar la rega de decisión.
+*** Cuán raros son los datos si H_0 es cierta?
+El valor de la probabilidad asociada a un resultado /p/ es la probabilidad de obtener
+el resultado observado o uno más extrmo (en dirección a la H_1), suponiendo que la H_0
+es la verdadera.
+
+Cuanto menor es el valor /p/, mayor es la evidencia provista por los
+datos en contra de H_0.
+
+El valor /p/ se compara con el nivel de sifnificación, \alpha, requerido para la toma
+de decisiones.
+
++ Si $p \leq \alpha \implies$ se rechaza H_0 y se dice que los resultados
+  /son estadísticamente significativos/.
++ Si $p \gt \alpha \implies$ no se rechaza H_0 y se dice que los resultados no son estadísticamente significativos.
+
+Es importante distinguir entre:
++ Establecer una relga de decisión. (Antes de observar los datos)
++ Tomar una decisión. (Despues de observar los datos)
+
+Existen 3 tipos de test de decisión (revisar)
+- *Test unilateral por derecha* :: La dirección de los valores extremos se encuentran a la Derecha
+- *Test unilateral por izquierd* :: La dirección de los valores extremos se encuentran a la Izquierda
+- *Test bilatera* :: La dirección de los valores extremos se encuentran en ambos extremos
 
 * La Estadística Descriptiva
 La *Estadistica* es la ciencia de recolectar, analizar y 

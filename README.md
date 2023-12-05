@@ -1,33 +1,34 @@
 
 # Table of Contents
 
-1.  [Introducción Toma Decisiones](#orgbbb9775)
-    1.  [Introducción](#org4570750)
-    2.  [Decisiones](#org5bc54de)
-    3.  [Lenguaje de la estadistica en la toma de Decisiones](#org1b345c8)
-        1.  [El ensayo de las Teorias](#org7772750)
-        2.  [Que teoría sustentar?](#org297007b)
-        3.  [Que errores podemos cometer ?](#org034c5fb)
-2.  [La Estadística Descriptiva](#org03f3303)
-    1.  [Tipos de variables](#org95bebb4)
-    2.  [Analisis decriptivo para variables categóricas](#org5af4423)
-    3.  [Análisis descriptivo para variables cualitativas](#org38e6315)
-    4.  [Medidas descriptivas para variables categóricas](#orgde75fa9)
-    5.  [Medidas descriptivas para variables cuantitativas](#org36465c3)
-3.  [Probabilidad](#orgaa46e35)
-4.  [Variables Aleatorias y Distribuciones](#org1d7ec59)
-5.  [Variables Aleatorias Continuas](#org435f4ab)
-6.  [Variables Aleatorias de Dim >= 2](#orgc0735f5)
-7.  [Proceso de Poisson, Bernulli y Cadena de Markov](#orge9cad6d)
+1.  [Introducción Toma Decisiones](#orgeb9c46c)
+    1.  [Introducción](#org7e155f0)
+    2.  [Decisiones](#org9d93c79)
+    3.  [Lenguaje de la estadistica en la toma de Decisiones](#org7da49b1)
+        1.  [El ensayo de las Teorias](#org551a199)
+        2.  [Que teoría sustentar?](#orgcb103fb)
+        3.  [Que errores podemos cometer ?](#org0dca8e3)
+        4.  [Cuán raros son los datos si H<sub>0</sub> es cierta?](#org5c545fe)
+2.  [La Estadística Descriptiva](#org60af71d)
+    1.  [Tipos de variables](#orgccb0948)
+    2.  [Analisis decriptivo para variables categóricas](#org0bcc2fe)
+    3.  [Análisis descriptivo para variables cualitativas](#orgf95bb6d)
+    4.  [Medidas descriptivas para variables categóricas](#orgdc95c71)
+    5.  [Medidas descriptivas para variables cuantitativas](#org14150a2)
+3.  [Probabilidad](#orgf5ad05f)
+4.  [Variables Aleatorias y Distribuciones](#org00ec2f0)
+5.  [Variables Aleatorias Continuas](#org8aa81d8)
+6.  [Variables Aleatorias de Dim >= 2](#org586ce95)
+7.  [Proceso de Poisson, Bernulli y Cadena de Markov](#orgbe742ec)
 
 
 
-<a id="orgbbb9775"></a>
+<a id="orgeb9c46c"></a>
 
 # Introducción Toma Decisiones
 
 
-<a id="org4570750"></a>
+<a id="org7e155f0"></a>
 
 ## Introducción
 
@@ -47,7 +48,7 @@ teorias, se recoleccionan datos, estos se analizan y se interpretan,
 generando nuevo conocimiento y nuevas teorías sobre estos.
 
 
-<a id="org5bc54de"></a>
+<a id="org9d93c79"></a>
 
 ## Decisiones
 
@@ -60,7 +61,7 @@ generando nuevo conocimiento y nuevas teorías sobre estos.
     en precio ?
 
 
-<a id="org1b345c8"></a>
+<a id="org7da49b1"></a>
 
 ## Lenguaje de la estadistica en la toma de Decisiones
 
@@ -72,7 +73,7 @@ componentes en este proceso; incluye teorías, datos, una medida de “likelines
 posibilidad de errores.  
 
 
-<a id="org7772750"></a>
+<a id="org551a199"></a>
 
 ### El ensayo de las Teorias
 
@@ -85,7 +86,7 @@ teorías se denominan **Hipótesis Estadísticas**. Tenemos 2 tipos
     población que el investigador está buscando. Es la competencia a esa creencia.
 
 
-<a id="org297007b"></a>
+<a id="orgcb103fb"></a>
 
 ### Que teoría sustentar?
 
@@ -101,7 +102,7 @@ a un test o ensayo **Estadisticamente significativo**, es decir, los datos son p
 probables de ser observados bajo el supuesto de que H<sub>0</sub> es cierta.
 
 
-<a id="org034c5fb"></a>
+<a id="org0dca8e3"></a>
 
 ### Que errores podemos cometer ?
 
@@ -148,8 +149,64 @@ Tabla de consecuencias.
 -   **P(e<sub>I</sub>)::** Probabilidad de rechazar H<sub>0</sub> siendo ella cierta.
 -   **P(e<sub>II</sub>)::** Probabilidad de no rechazar H<sub>0</sub>, cuando en realidad es cierta H<sub>1</sub>
 
+e<sub>I</sub> es considerado muy serio, pero para lograr un valor 0 en la chance de cometer e<sub>I</sub>,
+nunca rechazaríamos la H<sub>0</sub>. Por lo que siempre tiene que estar la chance de que se cometa
+un error. Si bien queremos que P(e<sub>I</sub>) y P(e<sub>II</sub>) sean mínimas, cuando el número de
+observaciones **está dado** no podemos controlar ambas probabilidades.
 
-<a id="org03f3303"></a>
+Llamamos **Nivel de significación** a un número 0 < &alpha; < 1 e imponemos la condición
+P(rechazar H<sub>0</sub> / H<sub>0</sub> es cierta) <= &alpha;, con el objetivo de minimizar
+P(no rechazar H<sub>0</sub>/H<sub>1</sub> es cierta) con lo cual se maximiza la potencia del test.
+
+Algunos valores utilizados por investigadores son de &alpha; = 0.01; 0.05; 0.1
+
+Ahora, algunas definiciones.
+
+-   ****Región Crítica/de rechazo**:** Conjunto de valores para los cuales rechazaríamos H<sub>0</sub>.
+-   ****Región de aceptación**:** Conunto de valores para los cuales no rechazaríamos la H<sub>0</sub>.
+-   ****Valor crítico**:** Aquel que marca el &ldquo;punto inicial&rdquo; del conjutno de valores que comprende
+    la región de rechazo.
+-   ****Potencia del test**:** 1 - \betha.
+
+Una **regla de decisión** es una condición matemática con la cual se acepta o no una
+hipótesis dada.
+
+Dada una regal de decisión, podemos hallar los niveles de &alpha; y \betha exactamente.
+También podemos ir al revés, fijar el nivel de sifnificación &alpha; y a partir de él,
+determinar la rega de decisión.
+
+
+<a id="org5c545fe"></a>
+
+### Cuán raros son los datos si H<sub>0</sub> es cierta?
+
+El valor de la probabilidad asociada a un resultado *p* es la probabilidad de obtener
+el resultado observado o uno más extrmo (en dirección a la H<sub>1</sub>), suponiendo que la H<sub>0</sub>
+es la verdadera.
+
+Cuanto menor es el valor *p*, mayor es la evidencia provista por los
+datos en contra de H<sub>0</sub>.
+
+El valor *p* se compara con el nivel de sifnificación, &alpha;, requerido para la toma
+de decisiones.
+
+-   Si $p \leq \alpha \implies$ se rechaza H<sub>0</sub> y se dice que los resultados
+    *son estadísticamente significativos*.
+-   Si $p \gt \alpha \implies$ no se rechaza H<sub>0</sub> y se dice que los resultados no son estadísticamente significativos.
+
+Es importante distinguir entre:
+
+-   Establecer una relga de decisión. (Antes de observar los datos)
+-   Tomar una decisión. (Despues de observar los datos)
+
+Existen 3 tipos de test de decisión (revisar)
+
+-   ****Test unilateral por derecha**:** La dirección de los valores extremos se encuentran a la Derecha
+-   ****Test unilateral por izquierd**:** La dirección de los valores extremos se encuentran a la Izquierda
+-   ****Test bilatera**:** La dirección de los valores extremos se encuentran en ambos extremos
+
+
+<a id="org60af71d"></a>
 
 # La Estadística Descriptiva
 
@@ -174,7 +231,7 @@ Las medidas resumen que se obtienen de una población se denominan
 **parámetro** y los que se obtienen a partir de una muestra se llama **estadistica**.
 
 
-<a id="org95bebb4"></a>
+<a id="orgccb0948"></a>
 
 ## Tipos de variables
 
@@ -189,7 +246,7 @@ Las medidas resumen que se obtienen de una población se denominan
 -   **<span class="underline">Continua:</span>:** Cada valor que toma pertenece a un conjunto continuo, como un intervalo.
 
 
-<a id="org5af4423"></a>
+<a id="org0bcc2fe"></a>
 
 ## Analisis decriptivo para variables categóricas
 
@@ -257,7 +314,7 @@ Las medidas resumen que se obtienen de una población se denominan
     contiene a la mayoría de las observaciones&rdquo;.
 
 
-<a id="org38e6315"></a>
+<a id="orgf95bb6d"></a>
 
 ## Análisis descriptivo para variables cualitativas
 
@@ -289,7 +346,7 @@ La forma del histograma nos muestra la tendencia de la variable, esta puede ser:
 -   **<span class="underline">Asimetría a la izquierda o negativa</span>:** Si la cola izquierda posee menor frecuencia que la derecha.
 
 
-<a id="orgde75fa9"></a>
+<a id="orgdc95c71"></a>
 
 ## Medidas descriptivas para variables categóricas
 
@@ -297,7 +354,7 @@ La forma del histograma nos muestra la tendencia de la variable, esta puede ser:
 -   Moda
 
 
-<a id="org36465c3"></a>
+<a id="org14150a2"></a>
 
 ## Medidas descriptivas para variables cuantitativas
 
@@ -318,27 +375,27 @@ La forma del histograma nos muestra la tendencia de la variable, esta puede ser:
         muestra estos datos es el boxplot.
 
 
-<a id="orgaa46e35"></a>
+<a id="orgf5ad05f"></a>
 
 # TODO Probabilidad
 
 
-<a id="org1d7ec59"></a>
+<a id="org00ec2f0"></a>
 
 # TODO Variables Aleatorias y Distribuciones
 
 
-<a id="org435f4ab"></a>
+<a id="org8aa81d8"></a>
 
 # TODO Variables Aleatorias Continuas
 
 
-<a id="orgc0735f5"></a>
+<a id="org586ce95"></a>
 
 # TODO Variables Aleatorias de Dim >= 2
 
 
-<a id="orge9cad6d"></a>
+<a id="orgbe742ec"></a>
 
 # TODO Proceso de Poisson, Bernulli y Cadena de Markov
 
