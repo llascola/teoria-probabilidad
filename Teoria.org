@@ -8,16 +8,20 @@ para la *Toma de Decisiones*.
 
 El metodo Cientifico comprende los siguientes pasos:
 - *Formular Teorias*
-- *Recoleccion de datos*
+- *Recolección de datos*
 - *Resumen y Analisis de Datos*
 - *Interpretacion de los resultados*
+
+Estos pasos ocurren de manera cíclica. Se empieza siempre formulando
+teorias, se recoleccionan datos, estos se analizan y se interpretan,
+generando nuevo conocimiento y nuevas teorías sobre estos.
 ** Decisiones
 - _Simples:_ :: Puedo cruzar la calle en esta interseccion?
 - _Complejas:_ :: Supongamos que quiero comprar un nuevo
   auto 0KM y decido hacerlo con la General Motors. La respuesta
   a las siguientes preguntas puede influir sobre la decision:
-  Distintos modelos producidos en el corriente ano, que modelo es
-  mas eficiente en cuanto a Km recorridos por litro de combustible,
+  Distintos modelos producidos en el corriente año, que modelo es
+  más eficiente en cuanto a Km recorridos por litro de combustible,
   en precio ?
 ** Lenguaje de la estadistica en la toma de Decisiones
 Esta nueva terminología involucra frases, símbolos y definiciones especiales. El  
