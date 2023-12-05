@@ -115,11 +115,11 @@ La forma del histograma nos muestra la tendencia de la variable, esta puede ser:
 - Moda
 
 ** Medidas descriptivas para variables cuantitativas
-- _Medidas de posición central:_:: Se busca describir el centro o compararlo con el resto de los datos
+- _Medidas de posición central:_ :: Se busca describir el centro o compararlo con el resto de los datos
 en relación al promedio y la mediana. El promedio tiene el problema de poder estar muy influido
 por las observaciones extremas, a diferencia de la mediana. El promedio toma en cuenta los valores y 
 la mediana solamente la cantidad de observaciones.
-- _Medidas de variabilidad:_:: Son medidas que describen el grado en el cual las observaciones se
+- _Medidas de variabilidad:_ :: Son medidas que describen el grado en el cual las observaciones se
 alejan del promedio.
   - Rango = max - min.
   - Desviaciones respecto de la media: Muestra que tan alejado está un dato de la media. Se obtiene 
