@@ -281,6 +281,57 @@ S si:
     - P(A) = P(A/B1)P(B1)+...+P(A/Bk)P(Bk)
     - Teorema de Bayes: P(Bi/A)= P(A/Bi)P(Bi) / suma(P(A/Bj)P(Bj)) con j de 1 a k.
 * TODO Variables Aleatorias y Distribuciones
-* TODO Variables Aleatorias Continuas
-* TODO Variables Aleatorias de Dim >= 2
+* Variables Aleatorias Continuas
+Sea X: S->R, si Rx es infinito no numerable decimos que X es una variable aleatoria continua. 
+Si X es una VAC existe una función /f/, llamada /funcion de densidad de probabilidad (fdp)/ de X.
+  - /f(X) >=0/
+  - \[ \int_{-\infty}^{\infty} f(x) \,dx\] = 1
+  - Para cualquier a, b, tal que \[{-\infty}<a<b<{\infty} \] tenemos P(a<=X<=b)= \[ \int_{a}^{b} f(x) \,dx\]
+- _Función de distribución acumulada:_ :: Sea X una VAC, llamamos Función de distribución acumulada a 
+  - F:R->R 
+    - x ->P(X<=x)= \[ \int_{-\infty}^{x} f(t) \,dt\] con /f/ la fdp asociada a X.
+  - F es continua
+  - F es derivable en los puntos de continuidad de /f/. F'(x) = /f(x)/
+  - F es no decreciente. x1 <= x2 -> F(x1) <= F(x2)
+  - \[ \lim_{{x \to -\infty}} F(x) = 0\] y \[ \lim_{{x \to \infty}} F(x) = 1\]
+- _Distribución Uniforme:_ :: Supongamos que X es una variable aleatoria continua que toma todos los valores en el 
+intervalo [a, b], en donde a y b son finitos. Si la fdp de X está dada por
+  - /f(x)=1/b-a  a<=x<=b y 0 en otro caso/
+decimos que X se distribuye uniformemente en el ese intervalo.
+  - E(X) = \[ \int_{-\infty}^{\infty} xf(x) \,dx\] = (b+a)/2
+  - V(X) = \[ \int_{-\infty}^{\infty} (x-E(X))^2f(x) \,dx\] = (b-a)^2/12 
+  - Muestra que los resultados son igualmente probables
+- _Distribución exponencial:_ :: Una variable aleatoria continua cuya fdp es 
+  - \[f(x) = ae^-ax si x > 0 y sino 0\]
+  Se dice que X tiene una distribución eponencial de parámetro 'a' 
+  - \[ F(x)= \int_{-\infty}^{x} f(t) \,dt\] = 
+    - \[\int_{-\infty}^{x} 0 \,dt\] = 0 si x < 0
+    - \[\int_{-\infty}^{x} ae^-ax \,dt\] = 1 - e^-ax si x > 0
+  - Propiedad de la falta de memoria: :: /[P ( X > t + a / X > a ) = P ( X > t )/] para t,a en Reales positivos
+  - E(X) = \[ \int_{0}^{\infty} xae^-ax \,dx\] = 1/a
+  - V(X) = \[ \int_{0}^{\infty} (x-E(X))^2ae^-ax \,dx\] = 1/(a^2)
+- _Distribución normal:_ :: Una variable aleatoria X, que toma todos los valores reales -inf < x < inf, tiene una 
+distribución normal o Gaussiana si su fdp es 
+  - \[f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x - \mu}{\sigma}\right)^2}\]
+Donde los parámetros \mu y \sigma deben satisfacer /-inf < \mu < inf/ y /\sigma > 0/
+  - Sirve como una buena aproximación a una gran cantidad de distribuciones.
+  - /f(X) >=0/
+  - \[ \int_{-\infty}^{\infty} f(x) \,dx\] = 1
+  - E(X) = \mu
+  - V(X) = \sigma^2
+  - \sqrt{V(X)} = \sigma es el desvío estándar
+- _Distribución normal estandarizada_: :: ? (usar tabla :))
+- _Extensión de sucesos equivalentes_: :: Sea \e un experimento y S un espacio muestral. Sea X una V.A sobre S.
+Supongamos que /y=H(x)/ es una función real de x. Entonces /Y=H(X)/ es una variable aleatoria puesto que para
+cada s en S se determina un valor Y, sea /y=H[X(s)]/
+  - Rx es el conjunto de valores posibles para x
+  - Ry es el conjunto de valores posibles para Y 
+Sea C un suceso asociado a Ry. Se define el suceso B en Rx como: los x en Rx tal que H(x) esté en C. Entonces, 
+B es el conjunto de valores de X tal que H(x) está en C. A los sucesos B y C se los llama *equivalentes*.
+  - P(C) es la probabilidad del suceso equivalente en función de X, esto es, P[{x en Rx tal que H(x) está en C}]
+- _Teorema de la fdp para Y_: :: Sea X una VAC con fdp /f(x)/, sea /y=H(x)/ una función *estrictamente* 
+*monótona y derivable para todo x*. La VAC /Y=H(X)/ tiene como fdp \[/f_y(y)=f_x(x)\frac{\partial f}{\partial x}\]/ 
+donde /x = H^-1(y)/
+/*hay propiedades pero me parecen basura*/
+* TODO Variables Aleatorias n-dimensionales
 * TODO Proceso de Poisson, Bernulli y Cadena de Markov
