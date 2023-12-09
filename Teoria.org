@@ -227,7 +227,59 @@ nos interesa saber el grado de certeza de cada uno de los posibles resultados. E
 la *Probabilidad*. Cabe mencionar que en un experimento entran en juego muchos factores pero nosotros 
 nos centraremos en dos, las condiciones esenciales del mismo y la cantidad de repeticiones.
 En cualquier experimento nos interesa saber, el procedimiento que se realizo y lo que estamos interesados
-en observar. A continuacion
+en observar. A continuacion vamos a dar una serie de definiciones que nos brinda el marco conceptual de 
+cualquier analisis de experimentos aleatorios.
+- Espacio muestral: :: Dado un experimento 'e', definimos al espacio muestral como el conjunto de todos
+  los resultados posibles. Este conjunto puede ser finito, infinito numerable o infinito no numerable.
+- Suceso: :: Se le llama suceso respecto de un espacio muestral asociado al subconjunto del mismo. El 
+  espacio muestral y el vacio son sucesos.
+  - Si A y B son sucesos, AUB es el suceso que ocurre si A o B ocurren
+  - Si A y B son sucesos, AnB es el suceso que ocurre si y solo si A y 
+    B ocurren.
+  - Si A es un suceso, -A es el suceso que ocurre si y solo si A no ocurre.
+  - Se dice que A y B son *muetuamente excluyentes* si no pueden ocurrir juntos.
+    AnB=0.
+- Frecuencia relativa: :: Con el objetivo de darte un grado de certeza a los sucesos y en base a esto
+  poder tener una mejor orientación sobre el resultado, se define la frecuencia relativa como la cantidad
+  de apariciones de un suceso sobre el total de pruebas.
+  - La frecuencia relativa está acotada por 0 y 1.
+  - Si A y B son sucesos muetuamente excluyentes, f_AUB= fA + fB.
+- Probabilidad de suceso: :: Se define P(A) como la frecuencia relativa de que ocurra A cuando la cantidad
+  de pruebas tiende a infinito.
+  - La probabilidad de un suceso está acotada por 0 y 1.
+  - P(S) = 1 con S el espacio muestral.
+  - P(AUB) = P(A)+P(B)
+  - P(vacio) = 0
+  - P(-A) = 1 - P(A)
+  - Si A y B son sucesos cualesquiera, P(AUB) = P(A)+P(B)-P(AnB)
+  - Si A, B y C son sucesos cualesquiera, P(AUBUC) = P(A)+P(B)+P(C)-P(AnB)-P(AnC)-P(CnB)+P(AnBnC)
+  - Si A incluido en B, P(A)<= P(B)
+  - Si A es un suceso que está formado por varios resultados posibles, P(A)= P(A1)+...+P(An)
+  - Si los 'k' resultados son igual de probables, $P(A)=r/k, con A={A1, ..., Ar}$.
+- Probabilidad condicional: :: Dados los sucesos A y B, la probabilidad condicional de B dado A, se indica 
+como P(B/A) y se entiende como la probabilidad de que ocurra B dado que A ya ocurrió.
+  - P(A/B) = P(AnB)/P(B).
+  - Teorema de la multiplicación de probabilidades: P(A1n...nAk)= P(A1)P(A2/A1)P(A3/A1,A2)... P(Ak/A1...Ak-1)
+  - P(A/B) = 0 si A y B son mutuamente excluyentes.
+  - P(B/A) = 1 si A está incluido en B.
+- Sucesos independientes: :: Se llaman sucesos independientes a aquellos sucesos en los cuales se sabe que si
+ocurre uno, no tiene inferencia en la ocurrencia o no del otro.
+  - Si A y B son sucesos independientes *si y solo si* P(AnB)= P(B)P(A)
+  - Si A, B y C son sucesos independientes si y solo si 
+    - P(AnB)= P(B)P(A) 
+    - P(AnC)= P(B)P(C)
+    - P(CnB)= P(B)P(C)
+    - P(AnBnC)= P(B)P(A)P(C)
+- Partición del espacio muestral: :: Se dice que los sucesos B1,...,Bk son una partición del espacio muestral
+S si:
+  - BinBj = vacio para todo i/=j
+  - La union de todos los Bi = S 
+  - P(Bi) > 0 para todo i. Esto es, cuando se realiza el experimento ocurre uno y solo uno de los sucesos Bi.
+  - Sea A un suceso en S, A puede descomponerse como la unión de sucesos mutuamente excluyentes.
+    - A = AnB1 U ... U AnBk
+    - P(A) = P(AnB1)+ ... +P(AnBk)
+    - P(A) = P(A/B1)P(B1)+...+P(A/Bk)P(Bk)
+    - Teorema de Bayes: P(Bi/A)= P(A/Bi)P(Bi) / suma(P(A/Bj)P(Bj)) con j de 1 a k.
 * TODO Variables Aleatorias y Distribuciones
 * TODO Variables Aleatorias Continuas
 * TODO Variables Aleatorias de Dim >= 2
