@@ -334,4 +334,27 @@ B es el conjunto de valores de X tal que H(x) está en C. A los sucesos B y C se
 donde /x = H^-1(y)/
 /*hay propiedades pero me parecen basura*/
 * TODO Variables Aleatorias n-dimensionales
-* TODO Proceso de Poisson, Bernulli y Cadena de Markov
+* Procesos Estocasticos: Cadena de Markov, Poisson y Bernulli
+Un proceso estocástio es una sucesión de variables aleatorias \(X_t\) parametrizadas por un t \in T es el espacio 
+paramétrico. Estas variables pueden o no ser dependientes unas de otras o tener distribuciones distintas.
+- /T/ es e factor que pueda determinar un cambio en el comportamiento de nuestro proceso, en general es el tiempo. 
+- /E/ es el conjunto de todos los posibles resultados del proceso. 
+Entonces, un proceso estocástico se puede ver de dos formas 
+- El conjunto de \({X_t:\omega->R, t \in T}\)
+- Una sola variable aleatoria con dos argumentos /X(\omega,t)/
+La interpretación es, dado un suceso \omega0, /X_t(\omega0)/ equivale al estado del proceso en el momento /t/. Esto 
+es totalmente determinista, ya que el suceso ya está definido, y solo veremos como evoluciona con el paso del tiempo.
+De forma análoga, para /t_0/ fijo, /X_t0(\omega)/ es la variable aleatoria que ocurre en el instante t. Esto ya no es 
+determinista, porque depende del suceso aleatorio /\omega/.
+En particular destacamos algunos procesos estocásticos
+- /T/ discreto y /E/ discreto: :: Se modelan con Cadenas de Markov o procesos de Bernoulli 
+- /T/ continuo y /E/ discreto: :: Se modelan con procesos puntuales, como procesos de Poisson
+
+** Cadenas de Markov 
+Las cadenas de Markov modelan procesos estocásticos donde 
+- Espacio paramétrico /T/ infinito y numerable (discreto).
+- Espacio de estados /E/ discreto 
+- Propiedad markoviana: El próximo estado *solo* depende del estado actual del sistema (pérdida de memoria)
+La importancia de la propiedad markoviana es que dado el presente, no solo se puede conocer la probabilidad del instante 
+/n+1/ sino también cualquier /n+m/ y así reconstruir el futuro.
+
