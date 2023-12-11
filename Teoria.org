@@ -227,7 +227,59 @@ nos interesa saber el grado de certeza de cada uno de los posibles resultados. E
 la *Probabilidad*. Cabe mencionar que en un experimento entran en juego muchos factores pero nosotros 
 nos centraremos en dos, las condiciones esenciales del mismo y la cantidad de repeticiones.
 En cualquier experimento nos interesa saber, el procedimiento que se realizo y lo que estamos interesados
-en observar. A continuacion
+en observar. A continuacion vamos a dar una serie de definiciones que nos brinda el marco conceptual de
+cualquier analisis de experimentos aleatorios.
+- Espacio muestral: :: Dado un experimento 'e', definimos al espacio muestral como el conjunto de todos
+  los resultados posibles. Este conjunto puede ser finito, infinito numerable o infinito no numerable.
+- Suceso: :: Se le llama suceso respecto de un espacio muestral asociado al subconjunto del mismo. El 
+  espacio muestral y el vacio son sucesos.
+  - Si A y B son sucesos, AUB es el suceso que ocurre si A o B ocurren
+  - Si A y B son sucesos, AnB es el suceso que ocurre si y solo si A y 
+    B ocurren.
+  - Si A es un suceso, -A es el suceso que ocurre si y solo si A no ocurre.
+  - Se dice que A y B son *muetuamente excluyentes* si no pueden ocurrir juntos.
+    AnB=0.
+- Frecuencia relativa: :: Con el objetivo de darte un grado de certeza a los sucesos y en base a esto
+  poder tener una mejor orientación sobre el resultado, se define la frecuencia relativa como la cantidad
+  de apariciones de un suceso sobre el total de pruebas.
+  - La frecuencia relativa está acotada por 0 y 1.
+  - Si A y B son sucesos muetuamente excluyentes, f_AUB= fA + fB.
+- Probabilidad de suceso: :: Se define P(A) como la frecuencia relativa de que ocurra A cuando la cantidad
+  de pruebas tiende a infinito.
+  - La probabilidad de un suceso está acotada por 0 y 1.
+  - P(S) = 1 con S el espacio muestral.
+  - P(AUB) = P(A)+P(B)
+  - P(vacio) = 0
+  - P(-A) = 1 - P(A)
+  - Si A y B son sucesos cualesquiera, P(AUB) = P(A)+P(B)-P(AnB)
+  - Si A, B y C son sucesos cualesquiera, P(AUBUC) = P(A)+P(B)+P(C)-P(AnB)-P(AnC)-P(CnB)+P(AnBnC)
+  - Si A incluido en B, P(A)<= P(B)
+  - Si A es un suceso que está formado por varios resultados posibles, P(A)= P(A1)+...+P(An)
+  - Si los 'k' resultados son igual de probables, $P(A)=r/k, con A={A1, ..., Ar}$.
+- Probabilidad condicional: :: Dados los sucesos A y B, la probabilidad condicional de B dado A, se indica 
+como P(B/A) y se entiende como la probabilidad de que ocurra B dado que A ya ocurrió.
+  - P(A/B) = P(AnB)/P(B).
+  - Teorema de la multiplicación de probabilidades: P(A1n...nAk)= P(A1)P(A2/A1)P(A3/A1,A2)... P(Ak/A1...Ak-1)
+  - P(A/B) = 0 si A y B son mutuamente excluyentes.
+  - P(B/A) = 1 si A está incluido en B.
+- Sucesos independientes: :: Se llaman sucesos independientes a aquellos sucesos en los cuales se sabe que si
+ocurre uno, no tiene inferencia en la ocurrencia o no del otro.
+  - Si A y B son sucesos independientes *si y solo si* P(AnB)= P(B)P(A)
+  - Si A, B y C son sucesos independientes si y solo si 
+    - P(AnB)= P(B)P(A) 
+    - P(AnC)= P(B)P(C)
+    - P(CnB)= P(B)P(C)
+    - P(AnBnC)= P(B)P(A)P(C)
+- Partición del espacio muestral: :: Se dice que los sucesos B1,...,Bk son una partición del espacio muestral
+S si:
+  - BinBj = vacio para todo i/=j
+  - La union de todos los Bi = S 
+  - P(Bi) > 0 para todo i. Esto es, cuando se realiza el experimento ocurre uno y solo uno de los sucesos Bi.
+  - Sea A un suceso en S, A puede descomponerse como la unión de sucesos mutuamente excluyentes.
+    - A = AnB1 U ... U AnBk
+    - P(A) = P(AnB1)+ ... +P(AnBk)
+    - P(A) = P(A/B1)P(B1)+...+P(A/Bk)P(Bk)
+    - Teorema de Bayes: P(Bi/A)= P(A/Bi)P(Bi) / suma(P(A/Bj)P(Bj)) con j de 1 a k.
 * [ ] Variables Aleatorias y Distribuciones
 ** Variables aleatorias discreta
 Sea *X* una variable aleatoria. Si el número de valores posibles
@@ -253,6 +305,81 @@ Distribución de probabilidad de X.
 #END_CENTER
 
 ***
-* TODO Variables Aleatorias Continuas
-* TODO Variables Aleatorias de Dim >= 2
-* TODO Proceso de Poisson, Bernulli y Cadena de Markov
+* Variables Aleatorias Continuas
+Sea X: S->R, si Rx es infinito no numerable decimos que X es una variable aleatoria continua. 
+Si X es una VAC existe una función /f/, llamada /funcion de densidad de probabilidad (fdp)/ de X.
+  - /f(X) >=0/
+  - \[ \int_{-\infty}^{\infty} f(x) \,dx\] = 1
+  - Para cualquier a, b, tal que \[{-\infty}<a<b<{\infty} \] tenemos P(a<=X<=b)= \[ \int_{a}^{b} f(x) \,dx\]
+- _Función de distribución acumulada:_ :: Sea X una VAC, llamamos Función de distribución acumulada a 
+  - F:R->R 
+    - x ->P(X<=x)= \[ \int_{-\infty}^{x} f(t) \,dt\] con /f/ la fdp asociada a X.
+  - F es continua
+  - F es derivable en los puntos de continuidad de /f/. F'(x) = /f(x)/
+  - F es no decreciente. x1 <= x2 -> F(x1) <= F(x2)
+  - \[ \lim_{{x \to -\infty}} F(x) = 0\] y \[ \lim_{{x \to \infty}} F(x) = 1\]
+- _Distribución Uniforme:_ :: Supongamos que X es una variable aleatoria continua que toma todos los valores en el 
+intervalo [a, b], en donde a y b son finitos. Si la fdp de X está dada por
+  - /f(x)=1/b-a  a<=x<=b y 0 en otro caso/
+decimos que X se distribuye uniformemente en el ese intervalo.
+  - E(X) = \[ \int_{-\infty}^{\infty} xf(x) \,dx\] = (b+a)/2
+  - V(X) = \[ \int_{-\infty}^{\infty} (x-E(X))^2f(x) \,dx\] = (b-a)^2/12 
+  - Muestra que los resultados son igualmente probables
+- _Distribución exponencial:_ :: Una variable aleatoria continua cuya fdp es 
+  - \[f(x) = ae^-ax si x > 0 y sino 0\]
+  Se dice que X tiene una distribución eponencial de parámetro 'a' 
+  - \[ F(x)= \int_{-\infty}^{x} f(t) \,dt\] = 
+    - \[\int_{-\infty}^{x} 0 \,dt\] = 0 si x < 0
+    - \[\int_{-\infty}^{x} ae^-ax \,dt\] = 1 - e^-ax si x > 0
+  - Propiedad de la falta de memoria: :: /[P ( X > t + a / X > a ) = P ( X > t )/] para t,a en Reales positivos
+  - E(X) = \[ \int_{0}^{\infty} xae^-ax \,dx\] = 1/a
+  - V(X) = \[ \int_{0}^{\infty} (x-E(X))^2ae^-ax \,dx\] = 1/(a^2)
+- _Distribución normal:_ :: Una variable aleatoria X, que toma todos los valores reales -inf < x < inf, tiene una 
+distribución normal o Gaussiana si su fdp es 
+  - \[f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x - \mu}{\sigma}\right)^2}\]
+Donde los parámetros \mu y \sigma deben satisfacer /-inf < \mu < inf/ y /\sigma > 0/
+  - Sirve como una buena aproximación a una gran cantidad de distribuciones.
+  - /f(X) >=0/
+  - \[ \int_{-\infty}^{\infty} f(x) \,dx\] = 1
+  - E(X) = \mu
+  - V(X) = \sigma^2
+  - \sqrt{V(X)} = \sigma es el desvío estándar
+- _Distribución normal estandarizada_: :: ? (usar tabla :))
+- _Extensión de sucesos equivalentes_: :: Sea \e un experimento y S un espacio muestral. Sea X una V.A sobre S.
+Supongamos que /y=H(x)/ es una función real de x. Entonces /Y=H(X)/ es una variable aleatoria puesto que para
+cada s en S se determina un valor Y, sea /y=H[X(s)]/
+  - Rx es el conjunto de valores posibles para x
+  - Ry es el conjunto de valores posibles para Y 
+Sea C un suceso asociado a Ry. Se define el suceso B en Rx como: los x en Rx tal que H(x) esté en C. Entonces, 
+B es el conjunto de valores de X tal que H(x) está en C. A los sucesos B y C se los llama *equivalentes*.
+  - P(C) es la probabilidad del suceso equivalente en función de X, esto es, P[{x en Rx tal que H(x) está en C}]
+- _Teorema de la fdp para Y_: :: Sea X una VAC con fdp /f(x)/, sea /y=H(x)/ una función *estrictamente* 
+*monótona y derivable para todo x*. La VAC /Y=H(X)/ tiene como fdp \[/f_y(y)=f_x(x)\frac{\partial f}{\partial x}\]/ 
+donde /x = H^-1(y)/
+/*hay propiedades pero me parecen basura*/
+* TODO Variables Aleatorias n-dimensionales
+* Procesos Estocasticos: Cadena de Markov, Poisson y Bernulli
+Un proceso estocástio es una sucesión de variables aleatorias \(X_t\) parametrizadas por un t \in T es el espacio 
+paramétrico. Estas variables pueden o no ser dependientes unas de otras o tener distribuciones distintas.
+- /T/ es e factor que pueda determinar un cambio en el comportamiento de nuestro proceso, en general es el tiempo. 
+- /E/ es el conjunto de todos los posibles resultados del proceso. 
+Entonces, un proceso estocástico se puede ver de dos formas 
+- El conjunto de \({X_t:\omega->R, t \in T}\)
+- Una sola variable aleatoria con dos argumentos /X(\omega,t)/
+La interpretación es, dado un suceso \omega0, /X_t(\omega0)/ equivale al estado del proceso en el momento /t/. Esto 
+es totalmente determinista, ya que el suceso ya está definido, y solo veremos como evoluciona con el paso del tiempo.
+De forma análoga, para /t_0/ fijo, /X_t0(\omega)/ es la variable aleatoria que ocurre en el instante t. Esto ya no es 
+determinista, porque depende del suceso aleatorio /\omega/.
+En particular destacamos algunos procesos estocásticos
+- /T/ discreto y /E/ discreto: :: Se modelan con Cadenas de Markov o procesos de Bernoulli 
+- /T/ continuo y /E/ discreto: :: Se modelan con procesos puntuales, como procesos de Poisson
+
+** Cadenas de Markov 
+Las cadenas de Markov modelan procesos estocásticos donde 
+- Espacio paramétrico /T/ infinito y numerable (discreto).
+- Espacio de estados /E/ discreto 
+- Propiedad markoviana: El próximo estado *solo* depende del estado actual del sistema (pérdida de memoria)
+La importancia de la propiedad markoviana es que dado el presente, no solo se puede conocer la probabilidad del instante 
+/n+1/ sino también cualquier /n+m/ y así reconstruir el futuro.
+
+>>>>>>> 1da77ca31d1c6d172b7dee25623b1d7420477e8f
