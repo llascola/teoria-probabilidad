@@ -381,5 +381,74 @@ Las cadenas de Markov modelan procesos estocásticos donde
 - Propiedad markoviana: El próximo estado *solo* depende del estado actual del sistema (pérdida de memoria)
 La importancia de la propiedad markoviana es que dado el presente, no solo se puede conocer la probabilidad del instante 
 /n+1/ sino también cualquier /n+m/ y así reconstruir el futuro.
+El diagrama de transiciones de una cadena de Markov es un grafo ponderado dirigido, donde cada vertice es un estado y 
+existe una arista entre dos estados si hay una probabilidad mayor a 0 de transicionar de uno al otro.
+Esta representación nos permite utilizar lo que en teoría de grafos se llama *matriz de transición* notada como /P(i,j/ 
+que cumple con las siguientes propiedades.
+- Es cuadrada de tamaño nxn donde n es /|E|/ 
+- /P(i,j) >= 0/
+- La sumatoria de cada vector fila es igual a 1
+- P(X0 = i0 , X1 = i1 , . . . , Xn = in ) = P(in-1 ,in)...P(i0 ,i1)P(X0 = i0). Lo que nos dice esto es que si conocemos
+todas las probabilidades de transición y la distribución inicial, entonces podemos calcular de manera exacta la 
+probabilidad con que se dará cada posible evolución de X.
+- P(Xm+n = j|Xm = i) = P^n(i, j). Esto es, la probabilidad de transicionar en n pasos de i a j es igual a la suma de las
+probabilidades de todos los caminos de longitud n que van de i a j. Esta suma de probabilidades de caminos es lo que 
+P^n(i, j) representa.
+- P^n+m(i, j) = \(\sum\limits_{k=1}^{n} P^n(i, k)P^m(k, j)\) . Esta propiedad nos dice que la probabilidad de una 
+transición en n + m pasos se puede separar en |E| pares de transiciones, donde en cada par la primera transición es en n
+pasos desde i hasta k, y la segunda va desde k hasta j en m pasos. Esta propiedad lleva el nombre de Chapman-Kolmogorov.
+- Sea π0 un vector de probabilidades, luego P (Xn = i) = πn (i) donde πn = π0 ·P^n
+- _Estados recurrentes y transitorios_: :: Decimos que un estado j es recurrente si F(j, j) = 1. Caso contrario, 
+si F(j, j) < 1 se dice que j es un estado transitorio. Los estados recurrentes se dividen a su vez en dos categorías, los 
+positivamente recurrentes y nulo recurrentes. Un estado j es positivamente recurrente si y solo si el tiempo promedio 
+entre dos visitas consecutivas a j es finito, mientras que en los estados nulo recurrentes este tiempo promedio es infinito.
+Un estado transitorio tiene la propiedad de que solo se transita un número finito de veces, mientras que cuando un estado 
+recurrente es visitado, entonces se lo volverá a visitar una cantidad infinita de veces. Esto es así porque un estado j es 
+transitorio si F (j, j) < 1, luego 1 - F (j, j) > 0 por lo que la probabilidad de no volver a j es no nula, lo cual 
+significa que a la larga dejaremos de pasar por este. 
+  - Teorema: 
+  . Si j es transitivo o recurrente nulo, entonces ∀i ∈ E, lim n→∞ P^n(i, j) = 0. De no ser así, a la larga terminaríamos 
+  regresando a j en una cantidad finita de pasos.
+  . Si j es recurrente positivo y aperiódico e i está en algún conjunto cerrado con j, entonces vale que lim n→∞ P^n(i, j) > 0.
+  Más aún, para cualquier i ∈ E se tiene lim n→∞ P^n(i, j) = F(i, j)lim n→∞ P^n(j, j).
+- _Absorción:_ :: Un estado j es absorbente si P (j, j) = 1. Esto implica que ∀i /= j P(j, i) = 0. En el grafo, un estado 
+absorbente se caracteriza por tener un lazo en j y ningún otro arco saliente de j.
+- _Accesibilidad:_ :: Decimos que j es accesible desde i si ∃n ∈ N0 : P^n(i, j)>0. Esto es, j es accesible desde i si hay 
+algún camino dirigido en el grafo de transiciones desde i hasta j de cualquier longitud finita.
+  - Teorema: Sean i, j ∈ E tales que i → j y además i es recurrente. Entonces j es recurrente.
+La intuición de por qué esto es cierto es sencilla. Si j fuese transitivo, entonces es porque
+eventualmente no se vuelve a j, y por ende no se debe poder volver a i. Pero i es recurrente,
+luego se tiene un absurdo.
+- _Conjuntos cerrados e irreducibles:_ :: 
+  -Un conjunto C ⊆ E es cerrado si ningún estado en E \ C es accesible desde algún estado
+  en j. E es siempre cerrado.
+  - Un conjunto cerrado C se dice irreducible si ∀S ⊂ C, S no es cerrado. Cuando E sea irreducible, diremos que la cadena 
+  es irreducible, y esta propiedad se refleja en el grafo cuando para cada par de estados i, j se tiene i → j.
+  - Si C ⊆ E cerrado e irreducible y finito, entonces ∀i ∈ C, i es positivamente recurrente.
+  - Sea j ∈ E un estado recurrente, luego existe C ⊆ E irreducible tal que j ∈ C.
+    - Teorema: Sea C = {j ∈ E : j es recurrente}. C se puede particionar de manera única en conjuntos irreducibles. Además,
+    si Ck es una componente de esta partición, entonces Ck es una cadena de Markov irreducible. A cada una de estas Cj las 
+    llamaremos clases de recurrencia ya que forman una clase de equivalencia bajo la relación de alcanzabilidad.
+    - Teorema: Si se tiene una cadena de Markov irreducible, entonces sus estados son todos recurrentes o todos transitivos.
+    - Teorema: 
+      - Sean i, j estados recurrentes que pertenecen al mismo conjunto irreducible, entonces F(i, j) = 1.
+      - Sean i, j estados recurrentes que pertenecen a distintos conjuntos irreducibles, entonces F(i, j) = 0
+      - Sea i un estado transitivo y C ⊂ E un conjunto irreducible. Entonces F(i, j) = F(i, k) ∀j, k ∈ C.
+    - Corolario: Tenemos que si existe una única clase recurrente C e i es un estado transitivo del cual solo un numero
+    finito de estados transitivos pueden ser alcanzados, luego F(i, j) = 1 ∀j ∈ C.
+- _Periodo:_ :: Sea j un estado recurrente, se define δ = mcd {n ≥ 1 : P^n (j, j) > 0}. Si δ ≥ 2 entonces decimos que j 
+es un estado periódico con período δ. Por otro lado, cuando δ = 1 decimos que j es un estado aperiódico.
+  - Si se tiene una cadena irreducible y un estado de período δ, entonces todos los estados tienen período δ y se dice 
+  que la cadena es periódica de período δ. Si un estado es aperiódico, todos los estados lo serán y se dice que la cadena 
+  es aperiódica.
+- _Ergodicidad:_ :: Sea X una cadena con cantidad finita de estados. Se dice que X es ergódica si y solo si X es irreducible, 
+recurrente y aperiódica. Notemos que pedir que es recurrente aquí no es necesario, ya que esto se puede deducir de la 
+irreduciblidad y cantidad finita de sus estados.
+- _Matrices canónicas y fundamentales:_ :: Si i es recurrente y j transitivo, entonces es un hecho que P (i, j) = 0, luego 
+si tomamos un orden de los estados i1 ,...,in ,j1 ,... ,jm con ik recurrente y jk transitivo, donde n es la cantidad de 
+estados recurrentes y m la de transitivos, si reescribimos P en este orden, se tendrá un bloque de ceros en la región 
+superior derecha. (ver resumen bati pag 10).
+ -Una observación muy importante para esto es ver que, en cierto sentido, las clases de recurrencia se comportan como estados
+ absorbentes. No se puede salir de los estados absorbentes al igual que de las clases de recurrencia, y entonces no podemos ir
+ de una clase de recurrencia a otra.
 
->>>>>>> 1da77ca31d1c6d172b7dee25623b1d7420477e8f
